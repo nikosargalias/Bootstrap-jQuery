@@ -1,0 +1,33 @@
+$font-family-base: Work-Sans;
+
+body {
+  letter-spacing: 1px;
+  line-height: 1.6;
+  font-size: 1.2rem;
+}
+
+ul {
+  list-style: none;
+}
+
+li,
+a {
+  @extend .text-light;
+  color: inherit !important;
+}
+
+h1 {
+  font-weight: 700;
+}
+h2 {
+  font-weight: 700;
+}
+
+// a:hover {
+//   text-decoration: underline !important;
+// }
+
+strong {
+  font-size: 2rem;
+  color: map-get($theme-colors, "primary-dark");
+}

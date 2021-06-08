@@ -1,0 +1,56 @@
+.btn {
+  border-radius: 50px !important;
+  padding: 0.5rem 2rem;
+  transition: all 0.2s;
+  font-weight: 700;
+
+  &-link {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    text-decoration: underline !important;
+    font-weight: 400;
+  }
+
+  &-link:hover {
+    padding: 0 !important;
+    text-decoration: underline !important;
+  }
+
+  &:hover {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+
+  &:focus {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    opacity: 0.9;
+  }
+
+  &-secondary {
+    color: white !important;
+  }
+
+  &-outline-secondary:hover {
+    color: white !important;
+    text-transform: none !important;
+    text-decoration: none !important;
+  }
+
+  &[class*="btn-outline"] {
+    border-width: 5px !important;
+  }
+
+  &[class*="btn-outline"]:hover {
+    border: map-get($theme-colors, "secondary-light") 5px solid !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: transparent !important;
+  }
+}

@@ -1,0 +1,33 @@
+.statistic-list {
+  padding: 0 !important;
+
+  li {
+    display: grid !important;
+    grid-template-areas:
+      "icon value"
+      ". info" !important;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .val {
+    grid-area: value !important ;
+  }
+
+  .icon {
+    grid-area: icon !important;
+  }
+
+  .info {
+    grid-area: info !important;
+  }
+
+  .val,
+  .icon {
+    font-size: 2rem !important;
+    color: map-get($theme-colors, "secondary") !important;
+  }
+  .icon {
+    margin-right: 1rem;
+  }
+}

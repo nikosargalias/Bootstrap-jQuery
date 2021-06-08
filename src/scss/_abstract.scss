@@ -1,0 +1,17 @@
+// Respond above.
+@mixin media($breakpoint) {
+  // Check if the breakpoint exists in the map.
+  @if map-has-key($grid-breakpoints, $breakpoint) {
+    // Retreive the breakpoint value.
+    $breakpoint-value: map-get($grid-breakpoints, $breakpoint);
+
+    // media query.
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+
+    // If the breakpoint doesn't exist in the map log a warning.
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}

@@ -1,0 +1,130 @@
+.footer__navigation {
+  // z-index: 1;
+  position: relative;
+  transition: all 0.5s;
+  padding: 0 !important;
+
+  &__chevron {
+    margin-right: 0.4rem !important;
+    font-size: 0.8em;
+    order: -1;
+
+    @include media(lg) {
+      margin: 0;
+      margin-left: 5rem;
+      display: none;
+      opacity: 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 !important;
+
+    @include media(lg) {
+      margin: 0 !important;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    font-size: 1.5rem;
+    font-weight: 700;
+    border: 1px solid rgba(white, 0.2);
+    width: 100% !important;
+
+    @include media(lg) {
+      border: none;
+    }
+  }
+
+  &__link {
+    display: flex !important;
+    align-items: center !important;
+    min-width: max-content !important;
+    text-align: inherit;
+    padding: 1rem 1rem !important;
+    text-decoration: none;
+    transition: all 0.2s;
+
+    @include media(lg) {
+      padding: 0.5rem 0 !important;
+    }
+
+    &:hover {
+      opacity: 0.8;
+      transform: scale(1.01);
+    }
+  }
+
+  &__link--underline {
+    position: relative;
+    @extend .footer__navigation__link;
+
+    @media (lg) {
+      &::after {
+        display: block;
+        content: "";
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        margin-top: 10px;
+        background: map-get($theme-colors, "primary");
+        background: #333;
+        width: 100%;
+        height: 1px;
+        transform: scaleX(0);
+        transition: all 0.5s;
+        transform-origin: center;
+      }
+
+      &:hover {
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+
+  &__dropdown-list {
+    // z-index: 2;
+    transform: scaleY(0) !important;
+    transform-origin: top;
+    max-height: 0;
+    transition: transform 0.5s, max-height 0.8s;
+    padding: 0 !important;
+    background-color: rgba(242, 242, 242, 0.057);
+
+    li {
+      font-size: 1.2rem;
+      font-weight: 400;
+      padding: 0 0 0 1rem !important;
+
+      @include media(lg) {
+        padding: 0 !important;
+      }
+    }
+
+    @include media(lg) {
+      transform: scaleY(1) !important;
+      max-height: 100%;
+      background-color: transparent;
+    }
+
+    a {
+      text-align: start;
+    }
+  }
+}
+
+.open {
+  transform: scaleY(1) translateY(0) !important;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+  max-height: 500px;
+}

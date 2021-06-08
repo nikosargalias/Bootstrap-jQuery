@@ -1,0 +1,10 @@
+.footer {
+  // padding: 3rem 0 !important;
+  background: #333232 !important;
+
+  &__copy {
+    border-top: 1px solid white;
+    padding-top: 4rem;
+    margin-top: 4rem;
+  }
+}
