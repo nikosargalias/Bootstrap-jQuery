@@ -1,0 +1,10 @@
+body {
+  overflow: hidden !important;
+}
+
+html,
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
